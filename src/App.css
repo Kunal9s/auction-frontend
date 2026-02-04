@@ -1,0 +1,222 @@
+.app {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+}
+
+/* Header */
+.header {
+  background: rgba(26, 26, 46, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-section {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.logo-icon {
+  font-size: 32px;
+}
+
+.tagline {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 400;
+  margin-left: 42px;
+}
+
+.header-status {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.connection-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.connection-status.connected .status-dot {
+  background: #22c55e;
+  box-shadow: 0 0 10px #22c55e;
+}
+
+.connection-status.disconnected .status-dot {
+  background: #ef4444;
+  box-shadow: 0 0 10px #ef4444;
+  animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.user-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  font-size: 12px;
+  font-family: 'DM Mono', monospace;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Stats Bar */
+.stats-bar {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 30px 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.stat {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+.stat-value {
+  font-size: 32px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Main Content */
+.main-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px 60px;
+}
+
+/* Auction Grid */
+.auction-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+  margin-top: 20px;
+}
+
+/* Loading Screen */
+.loading-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 20px;
+}
+
+.loading-spinner {
+  font-size: 48px;
+  filter: drop-shadow(0 0 20px rgba(102, 126, 234, 0.5));
+}
+
+.loading-screen p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Footer */
+.footer {
+  max-width: 1400px;
+  margin: 40px auto 0;
+  padding: 30px 40px;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 14px;
+}
+
+/* Toast Customization */
+.custom-toast {
+  background: #1a1a1a !important;
+  color: #fff !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 20px;
+  }
+
+  .stats-bar {
+    padding: 20px;
+  }
+
+  .auction-grid {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
+
+  .main-content {
+    padding: 0 20px 40px;
+  }
+}
